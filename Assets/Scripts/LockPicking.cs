@@ -20,10 +20,6 @@ public class LockPicking : MonoBehaviour
     void Update()
     {
 
-      // var test = Porte.GetComponent<CircularDrive>().isLimited;
-      // Debug.Log(test);
-
-
       if(i == 100){
         Debug.Log("Ouvert");
         Verrou.transform.Rotate(0.0f, 0.0f, 0.0f);
