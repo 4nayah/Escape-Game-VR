@@ -26,19 +26,12 @@ public class CadenasDirectionel : MonoBehaviour
     private int m = 3;
     private bool isHover = false;
     int currentID;
-    // public Text countText;
     float x;
-    // Start is called before the first frame update
     void Start()
     {
       currentObject = null;
       currentID = 0;
       unlockChest = false;
-      // countText.text="CODE : "+ j.ToString()+k.ToString()+l.ToString()+m.ToString();
-      // Cylinder1.transform.rotation = Quaternion.Euler(-36*(j-3),-180,90);
-      // Cylinder2.transform.rotation = Quaternion.Euler(-36*(k-3),-180,90);
-      // Cylinder3.transform.rotation = Quaternion.Euler(-36*(l-3),-180,90);
-      // Cylinder4.transform.rotation = Quaternion.Euler(-36*(m-3),-180,90);
     }
 
     private void Awake()
@@ -58,13 +51,6 @@ public class CadenasDirectionel : MonoBehaviour
 
       RaycastHit[] hits;
       hits = Physics.RaycastAll(transform.position, transform.forward, 100.0F);
-
-
-
-
-
-        // transform.eulerAngles = new Vector3(0, 0, 0);
-
 
         for(int i=0; i<hits.Length; i++){
           RaycastHit hit = hits[i];
@@ -89,23 +75,14 @@ public class CadenasDirectionel : MonoBehaviour
                 }
               }//END GET STATE DOWN
 
-              // Debug.Log(j.ToString()+k.ToString()+l.ToString()+m.ToString());
-
-              // 0 = est
-              // 1 = sud
-              // 2 = ouest
-              // 3 = nord
-
-              // 3102 (nord sud est ouest)
-
               if(j==3 && k==1 && l==0 && m==2){
                 unlockChest = true;
                 DoorChest.GetComponent<BoxCollider>().center = new Vector3(-0.008476291f,0,-0.7016948f);
 
 
               }
-          }////END CurrentID
-      }//END FOR
+          }
+      }
 
       if(j < 4){
         Cylinder1.transform.rotation = Quaternion.Euler(-90*(j),00,00);
